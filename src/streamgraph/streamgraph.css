@@ -1,0 +1,34 @@
+.highlighted-stream {
+  opacity: 0.7 !important;
+}
+
+.streamgraph .rv-xy-plot__series--line {
+  cursor: pointer;
+}
+
+.streamgraph-example {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chart-hint {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  color: #DDD;
+}
+  
+.chart-hint h3, .chart-hint p {
+  padding: 0;
+  margin: 0;
+}
+
+.chart-hint h3 {
+  font-size: 15px;
+}
+
+.chart-hint p {
+  text-align: left;
+  font-size: 13px;
+}

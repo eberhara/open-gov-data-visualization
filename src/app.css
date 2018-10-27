@@ -1,0 +1,24 @@
+.app {
+  text-align: center;
+}
+
+.app-header {
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #222;
+  color: white;
+}
+
+.app-title {
+  font-size: 1.5em;
+}
+
+.app-body {
+  padding: 0 50px;
+}
+
+.app-chart {
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
