@@ -1,6 +1,9 @@
 import React from 'react';
 import { Line } from 'react-chartjs';
 
+import 'react-vis/dist/style.css';
+
+
 var data = {
 	labels: ["January", "February", "March", "April", "May", "June", "July"],
 	datasets: [

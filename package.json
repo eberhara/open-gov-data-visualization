@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1",
     "chart.js": "^1.1.1",
     "d3-array": "^1.2.1",
     "d3-shape": "^1.2.0",
@@ -13,7 +15,8 @@
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-vis": "^1.9.4"
+    "react-vis": "^1.9.4",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
