@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { Line, Spiralgraph, Streamgraph } from './charts'
-import Filters from './filters'
+import { LineChart, SpiralGraph, StreamGraph } from './charts'
+import { Datasets, Dates } from './filters'
 
 import './app.css';
 
@@ -16,15 +16,16 @@ class App extends Component {
         <div className="app-body">
           <div className="app-body__chart">
             <Router>
-              <div>
-                <Route exact path="/" component={Streamgraph} />
-                <Route path="/line" component={Line} />
-                <Route path="/spiralgraph" component={Spiralgraph} />
-              </div>
+              <Fragment>
+                <Route exact path="/" component={StreamGraph} />
+                <Route path="/line" component={LineChart} />
+                <Route path="/spiralgraph" component={SpiralGraph} />
+              </Fragment>
             </Router>
           </div>
           <div className="app-body__filters">
-            <Filters />
+            <Datasets />
+            <Dates />
           </div>
         </div>
       </div>

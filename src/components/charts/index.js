@@ -1,3 +1,3 @@
-export { default as Line } from './line'
-export { default as Spiralgraph } from './spiralgraph'
-export { default as Streamgraph } from './streamgraph'
+export { LineChart } from './line'
+export { SpiralGraph } from './spiralgraph'
+export { default as StreamGraph } from './streamgraph'

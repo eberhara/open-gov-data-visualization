@@ -1,12 +1,5 @@
-const availableDatasets = [{
-  id: 'crimes',
-  label: 'Crimes'
-}, {
-  id: 'education',
-  label: 'Educação'
-}, {
-  id: 'drugs',
-  label: 'Posse de Drogas'
-}];
+import availableDatasets from './available-datasets'
 
-export default availableDatasets;
+export { default as getDatasets } from './get-datasets'
+
+export default availableDatasets

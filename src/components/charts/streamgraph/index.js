@@ -1,10 +1,9 @@
-import React, {Component, Fragment} from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import _ from 'lodash';
 import {stack as d3Stack, stackOffsetWiggle} from 'd3-shape';
 import {range, transpose} from 'd3-array';
 
-import {DiscreteColorLegend, FlexibleWidthXYPlot, AreaSeries, Hint, LineMarkSeries, Crosshair, XAxis, YAxis} from 'react-vis';
+import {DiscreteColorLegend, FlexibleWidthXYPlot, AreaSeries, Hint, XAxis, YAxis} from 'react-vis';
 import Highlight from './highlight';
 
 import './streamgraph.css';
@@ -47,8 +46,6 @@ const normalizeData = (series) => (
     return newSerie;
   })
 )
-
-const getData = () => normalizeData(DATA.series).map(({ data }) => data)
 
 const generateData = () => {
   const data = normalizeData(DATA.series).map(({ data }) => data)
@@ -96,7 +93,7 @@ class StreamgraphExample extends Component {
     )
   }
   render() {
-    const { data, hintIndex, hoveredIndex, lastDrawLocation } = this.state;
+    const { data, hoveredIndex, lastDrawLocation } = this.state;
   
     return (
       <div className="streamgraph-example">

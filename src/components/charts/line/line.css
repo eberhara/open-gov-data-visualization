@@ -1,0 +1,11 @@
+.line-chart {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 800px;
+  height: 800px;
+  background-color: #fff;
+}
+
+.recharts-cartesian-axis-tick {    
+  font-family: Roboto, sans-serif;
+}

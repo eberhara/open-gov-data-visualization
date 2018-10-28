@@ -1,7 +1,1 @@
-import React from 'react';
-
-export default () => (
-  <div>
-    Here goes a chart
-  </div>
-)
+export { default as SpiralGraph } from './spiralgraph'

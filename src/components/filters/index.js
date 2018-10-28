@@ -1,7 +1,2 @@
-import React from 'react';
-
-import Datasets from './datasets'
-
-export default () => (
-  <Datasets />
-)
+export { default as Datasets } from './datasets'
+export { default as Dates } from './dates'
