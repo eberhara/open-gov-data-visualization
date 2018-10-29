@@ -15,43 +15,55 @@ class MyLineChart extends Component {
     animation : true
   }
   
-  zoom(){
+  zoomIn = () => {
   	let { refAreaLeft, refAreaRight } = this.state;
 		if ( refAreaLeft === refAreaRight || refAreaRight === '' ) {
-    	this.setState( () => ({
+    	this.setState({
       	refAreaLeft : '',
         refAreaRight : ''
-      }) );
+      });
     	return;
     }
 
-	  if ( refAreaLeft > refAreaRight ) [ refAreaLeft, refAreaRight ] = [ refAreaRight, refAreaLeft ]
+	  if (refAreaLeft > refAreaRight) [ refAreaLeft, refAreaRight ] = [ refAreaRight, refAreaLeft ]
     this.props.onDateFilter(refAreaLeft, refAreaRight)
 
 		this.setState({
       refAreaLeft : '',
-      refAreaRight : ''
+      refAreaRight : '', 
     })  
   }
 
 	getNormalizedData(datasets) {
-    const { yearInit, yearEnd } = this.props.dates
+    const { yearInit, yearEnd, shouldRenderMonths } = this.props.dates
     const data = []
 
-    for (let index = yearInit; index <= yearEnd; index++) {
-      const dataEntry = { name: index }
-      
-      datasets.forEach(content => {
-        dataEntry[content.id] = content.data[index].total
-      })
-      
-      data.push(dataEntry)
+    for (let year = yearInit; year <= yearEnd; year++) {
+      if (shouldRenderMonths) {
+        for (let month = 1; month <= 12; month++) {
+          const dataEntry = { name: `${month}/${year}` }
+          
+          datasets.forEach(content => {
+            dataEntry[content.id] = content.data[year].normalized.detailed[month-1]
+          })
+          
+          data.push(dataEntry)
+        }
+      } else {
+        const dataEntry = { name: year }
+        
+        datasets.forEach(content => {
+          dataEntry[content.id] = content.data[year].normalized.total
+        })
+        
+        data.push(dataEntry)
+      }
     }
-
     return data
   }
 
   render() {
+    const { shouldRenderMonths } = this.props.dates
     const datasets = getDatasets(this.props.datasets)
     const { refAreaLeft, refAreaRight } = this.state;
     const data = this.getNormalizedData(datasets)
@@ -64,8 +76,7 @@ class MyLineChart extends Component {
           data={data}
           onMouseDown = { (e) => e && this.setState({ refAreaLeft: e.activeLabel }) }
           onMouseMove = { (e) => e && this.state.refAreaLeft && this.setState({ refAreaRight: e.activeLabel }) }
-          onMouseUp = { this.zoom.bind( this ) }
-        >
+          onMouseUp = { () => !shouldRenderMonths && this.zoomIn() }>
           <CartesianGrid strokeDasharray="3 3"/>
           <XAxis dataKey="name" padding={{ left: 15, right: 15 }} />
           <Tooltip wrapperStyle={{ fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' }} />
