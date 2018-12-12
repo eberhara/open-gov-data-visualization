@@ -1,12 +1,12 @@
 import percentage from './example-percentage'
-import homicides from './homicides'
+import homicidios from './homicidios'
 
 const availableDatasets = [{
   id: 'homicides',
-  label: 'Homicídios',
+  label: 'Homicídio Doloso',
   color: '#2196f3',
   type: 'absolute',
-  data: homicides
+  data: homicidios
 }, {
   id: 'exemplo',
   label: 'Exemplo percentage',
@@ -14,12 +14,6 @@ const availableDatasets = [{
   type: 'percentage',
   unit: '%',
   data: percentage
-}, {
-  id: 'crimes',
-  label: 'Crimes',
-  color: '#f50057',
-  type: 'absolute',
-  data: homicides
 }];
 
 export default availableDatasets

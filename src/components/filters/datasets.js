@@ -11,7 +11,7 @@ import { addDataset, removeDataset } from '../../actions'
 import availableDatasets from '../../datasets'
 
 const Datasets = ({ datasets = [], onSelectDataset, onRemoveDataset }) => (
-  <FormControl component="fieldset" style={{ width: '100%' }}>
+  <FormControl component="fieldset" style={{ width: '100%', padding: '0 10px' }}>
     <FormLabel component="legend">Datasets</FormLabel>
     <FormGroup>
       {availableDatasets.map(({ id, label, color }) => (

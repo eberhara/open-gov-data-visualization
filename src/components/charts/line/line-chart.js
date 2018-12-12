@@ -61,13 +61,31 @@ class MyLineChart extends Component {
     }
     return data
   }
+  
+  getDataRealValue = (datasets, dataKey, name) => {
+    const { shouldRenderMonths } = this.props.dates
+    const dataset = datasets.find(({ id }) => id === dataKey)
+
+    if (dataset) {
+      if (shouldRenderMonths) {
+        const [month, year] = name.split('/')
+        if (month && year) {
+          return dataset.data[year].detailed[month - 1]
+        } else {
+          return null
+        }          
+      }
+      return dataset.data[name].total
+    }
+    return null
+  }
 
   render() {
     const { shouldRenderMonths } = this.props.dates
     const datasets = getDatasets(this.props.datasets)
     const { refAreaLeft, refAreaRight } = this.state;
     const data = this.getNormalizedData(datasets)
-
+  
     return (
       <div style={{ height:  '100%' }}>
         <LineChart
@@ -79,7 +97,10 @@ class MyLineChart extends Component {
           onMouseUp = { () => !shouldRenderMonths && this.zoomIn() }>
           <CartesianGrid strokeDasharray="3 3"/>
           <XAxis dataKey="name" padding={{ left: 15, right: 15 }} />
-          <Tooltip wrapperStyle={{ fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' }} />
+          <Tooltip
+            wrapperStyle={{ fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' }}
+            formatter={(value, name, props) => this.getDataRealValue(datasets, props.dataKey, props.payload.name)}
+          />
           
           {datasets.map(dataset => (
             <Line

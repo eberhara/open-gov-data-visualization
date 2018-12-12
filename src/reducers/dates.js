@@ -1,7 +1,7 @@
 const initialState = {
   filtering: false,
-  yearInit: 2000,
-  yearEnd: 2017,
+  yearInit: 2002,
+  yearEnd: 2018,
   shouldRenderMonths: false
 }
 

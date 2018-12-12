@@ -1,4 +1,5 @@
 import availableDatasets from '../datasets'
+console.log(availableDatasets[0].id, availableDatasets[1].id)
 const initialState = [availableDatasets[0].id, availableDatasets[1].id]
 
 const datasets = (state = initialState, action) => {
