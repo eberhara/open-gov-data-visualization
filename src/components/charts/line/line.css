@@ -9,3 +9,7 @@
 .recharts-cartesian-axis-tick {    
   font-family: Roboto, sans-serif;
 }
+
+.recharts-surface {
+  overflow: visible;
+}
