@@ -12,7 +12,7 @@ import availableDatasets from '../../datasets'
 
 const Datasets = ({ datasets = [], onSelectDataset, onRemoveDataset }) => (
   <FormControl component="fieldset" style={{ width: '100%', padding: '0 10px' }}>
-    <FormLabel component="legend">Datasets</FormLabel>
+    <FormLabel component="legend">Dados</FormLabel>
     <FormGroup>
       {availableDatasets.map(({ id, label, color }) => (
         <FormControlLabel
