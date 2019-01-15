@@ -21,14 +21,14 @@ const availableDatasets = [{
   color: '#e91e63',
   type: 'absolute',
   data: posseEntorpecentes
-}, {
+}/*, {
   id: 'exemplo',
   label: 'Exemplo percentage',
   color: '#9c27b0',
   type: 'percentage',
   unit: '%',
   data: percentage
-}];
+}*/];
 
 export default availableDatasets
 
