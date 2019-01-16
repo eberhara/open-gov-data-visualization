@@ -93,7 +93,6 @@ class Streamgraph extends Component {
   }
 
   render() {
-    const { shouldRenderMonths, yearInit, yearEnd } = this.props.dates
     const { hoveredIndex, lastDrawLocation } = this.state;
     const datasets = getDatasets(this.props.datasets)
     const data = this.getNormalizedData(datasets)
