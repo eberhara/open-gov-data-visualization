@@ -1,6 +1,5 @@
 import availableDatasets from '../datasets'
-console.log(availableDatasets[0].id, availableDatasets[1].id)
-const initialState = [availableDatasets[0].id, availableDatasets[1].id]
+const initialState = [availableDatasets[0].id, availableDatasets[1].id, availableDatasets[2].id, availableDatasets[3].id, availableDatasets[4].id, availableDatasets[5].id]
 
 const datasets = (state = initialState, action) => {
   switch (action.type) {
