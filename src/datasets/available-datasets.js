@@ -5,6 +5,9 @@ import homicidios from './homicidios'
 import roubos from './roubos'
 import roubosVeiculos from './roubos-veiculos'
 import posseEntorpecentes from './posse-entorpecentes'
+import obitosInternacoes from './obitos'
+import internacoes from './internacoes'
+import leitos from './leitos'
 
 const availableDatasets = [{
   id: 'homicides',
@@ -42,6 +45,24 @@ const availableDatasets = [{
   color: '#357a38',
   type: 'absolute',
   data: posseEntorpecentes
+}, {
+  id: 'internacoes-hospitais',
+  label: 'Internações hospitalares',
+  color: '#FF8F00',
+  type: 'absolute',
+  data: internacoes
+}, {
+  id: 'obitos-hospitais',
+  label: 'Óbito pós internação',
+  color: '#6D4C41',
+  type: 'absolute',
+  data: obitosInternacoes
+}, {
+  id: 'leitos',
+  label: 'Leitos hospitalares',
+  color: '#607D8B',
+  type: 'absolute',
+  data: leitos
 }/*, {
   id: 'exemplo',
   label: 'Exemplo percentage',
